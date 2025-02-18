@@ -1,0 +1,29 @@
+=flex($direction: false, $justify-content: false, $align-items: false, $wrap: false, $grow: false, $align-content: false, $align-self: false, $flex: false, $gap: 0)
+	display: flex
+
+	@if $direction and $wrap
+		flex-flow: $direction $wrap
+	@else if $direction
+		flex-direction: $direction
+	@else if $wrap
+		flex-wrap: $wrap
+
+	@if $justify-content
+		justify-content: $justify-content
+
+	@if $align-items
+		align-items: $align-items
+
+	@if $grow
+		flex-grow: $grow
+
+	@if $align-content
+		align-content: $align-content
+	
+	@if $align-self
+		align-self: $align-self
+	
+	@if $flex
+		flex: $flex
+    
+    gap: $gap + px

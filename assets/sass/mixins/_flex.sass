@@ -1,5 +1,6 @@
 =flex($direction: false, $justify-content: false, $align-items: false, $wrap: false, $grow: false, $align-content: false, $align-self: false, $flex: false, $gap: 0)
 	display: flex
+	gap: $gap + px
 
 	@if $direction and $wrap
 		flex-flow: $direction $wrap
@@ -25,5 +26,3 @@
 	
 	@if $flex
 		flex: $flex
-    
-    gap: $gap + px

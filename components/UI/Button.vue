@@ -4,11 +4,6 @@ button.Button(@click="handleClick")
 </template>
 
 <script lang='ts' setup>
-// interface Button {
-//     text?: string
-// }
-
-// const props = defineProps<Button>() 
 const emit = defineEmits(['onClick'])
 
 const handleClick = (e: Event) => {

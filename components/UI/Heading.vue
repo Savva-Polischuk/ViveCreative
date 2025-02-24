@@ -19,7 +19,7 @@ h5.Heading(v-else="props.hSize === 'h5'")
 type HSize = "h1" | "h2" | "h3" | "h4" | "h5" 
 
 interface Heading {
-    hSize: HSize
+    hSize: HSize // размер заголовка
 }
 
 const props = defineProps<Heading>()
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5
     &.gradient
         color: transparent
         background-clip: text
-        background-image: linear-gradient(to right, #a6a6a6, #f0f0f0, #a6a6a6)
+        background-image: linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
         white-space: nowrap
         width: min-content
     

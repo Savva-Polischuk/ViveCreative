@@ -1,5 +1,6 @@
 //! normalize.sass v3.0.0 | MIT License | git.io/normalize
-
+*
+  margin: 0
 // 1. Set default font family to sans-serif.
 // 2. Prevent iOS text size adjust after orientation change, without disabling user zoom.
 html
@@ -71,11 +72,10 @@ dfn
 // contexts in Firefox 4+, Safari 5, and Chrome.
 h1
   font-size: 2em
-  margin: 0.67em 0
 
 // Address styling not present in IE 8/9.
 mark
-  background: #ff0
+  background: #fff
   color: #000
 
 // Address inconsistent and variable font size in all browsers.
@@ -109,9 +109,6 @@ svg:not(:root)
 // Grouping content
 /////////////////////
 
-// Address margin not present in IE 8/9 and Safari 5.
-figure
-  margin: 1em 40px
 
 // Address differences between Firefox and other browsers.
 hr
@@ -140,10 +137,6 @@ code, kbd, pre, samp
 // 2. Correct font properties not being inherited.
 // 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
 
-button, input, optgroup, select, textarea
-  color: inherit // 1
-  font: inherit // 2
-  margin: 0 // 3
 
 // Address `overflow` set to `hidden` in IE 8/9/10.
 button
@@ -215,11 +208,6 @@ input[type="search"]
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration
   -webkit-appearance: none
 
-// Define consistent border, margin, and padding.
-fieldset
-  border: 1px solid #c0c0c0
-  margin: 0 2px
-  padding: 0.35em 0.625em 0.75em
 
 // 1. Correct `color` not being inherited in IE 8/9.
 // 2. Remove padding so people aren't caught out if they zero out fieldsets.

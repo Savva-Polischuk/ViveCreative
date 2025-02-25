@@ -27,19 +27,19 @@ const props = defineProps<Heading>()
 
 <style lang='sass' scoped>
 h1
-        font-size: 48px
+        font-size: 2.4rem
 
 h2
-        font-size: 50px
+        font-size: 2.5rem
 
 h3
-        font-size: 40px
+        font-size: 2rem
 
 h4
-        font-size: 36px
+        font-size: 1.8rem
 
 h5
-        font-size: 32px
+        font-size: 1.6rem
 
 h1, h2, h3, h4, h5
     &.gradient

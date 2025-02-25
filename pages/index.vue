@@ -1,5 +1,5 @@
 <template lang='pug'>
-Heading.gradient(:hSize='"h1"') Вы — наслаждаетесь результатом
+Header
 </template>
 
 <script lang='ts' setup>

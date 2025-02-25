@@ -4,11 +4,6 @@ button.Button(@click="handleClick")
 </template>
 
 <script lang='ts' setup>
-// interface Button {
-//     text?: string
-// }
-
-// const props = defineProps<Button>() 
 const emit = defineEmits(['onClick'])
 
 const handleClick = (e: Event) => {
@@ -21,12 +16,13 @@ const handleClick = (e: Event) => {
     +flex(row, center, center)
     background-color: transparent
     border: 1px solid white
-    border-radius: 10px
-    min-width: 265px
-    min-height: 51px
-    margin: 20px
+    border-radius: .5rem
+    min-width: 13.3rem
+    min-height: 2.6rem
+    font: inherit
     font-weight: 700
-    +transition([background-color, color], 0.3)
+    color: inherit
+    +transition([background-color, color], .3)
 
     &:hover
         background-color: #fff

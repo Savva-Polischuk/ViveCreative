@@ -1,6 +1,7 @@
 <template lang='pug'>
 p.Text(
     :class="props.fontWeight"
+    :style="{fontSize: props.fontSize}"
 )
     slot
 </template>
@@ -9,7 +10,8 @@ p.Text(
 type FontWeight = "thin" | "light" | "regular" | "medium" | "semi" | "bold"
 
 interface Text {
-    fontWeight?: FontWeight
+    fontWeight?: FontWeight // начертание текста
+    fontSize?: string // размер шрифта
 }
 
 const props = defineProps<Text>()
@@ -17,6 +19,8 @@ const props = defineProps<Text>()
 
 <style lang='sass' scoped>
 .Text
+    &.grey
+        color: rgba(255, 255, 255, .6)
     
     &.thin
         font-weight: 100

@@ -34,6 +34,10 @@ header.Header
     height: 5.1rem
     background: linear-gradient(to right, rgba(52, 52, 52, 0.2), rgba(86, 86, 86, 0.2), rgba(52, 52, 52, 0.2))
 
+.content
+    +flex(row, space-between, center)
+    width: 56rem
+
 ul
     +flex(row, space-between, center)
     width: 23.9rem
@@ -41,8 +45,4 @@ ul
 a
     text-decoration: none
     color: #FFFFFF
-
-.content
-    +flex(row, space-between, center)
-    width: 56rem
 </style>

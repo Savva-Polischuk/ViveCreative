@@ -1,18 +1,20 @@
 <template lang='pug'>
 header.Header
-    div.content
-        div.plug plug
+    .content
+        .logo
+            NuxtLink(to='/')
+                IconImg(name="mainLogo")
         nav
             ul
                 li
-                    a(href="#")
-                        Text.regular(fontSize="1rem") Услуги
+                    NuxtLink(to='/')
+                        Text(fontSize="1rem") Услуги
                 li 
-                    a(href="#")
-                        Text.regular(fontSize="1rem") О нас
+                    NuxtLink(to='/')
+                        Text(fontSize="1rem") О нас
                 li 
-                    a(href="#")
-                        Text.regular(fontSize="1rem") Контакты
+                    NuxtLink(to='/')
+                        Text(fontSize="1rem") Контакты
         Button Заказать проект
 </template>
 
@@ -21,28 +23,28 @@ header.Header
 </script>
 
 <style lang='sass' scoped>
-.plug
-    width: 3.3rem
-    height: 2.1rem
-    background-color: white
-    color: black
-
-
-
 .Header
     +flex(row, center, center)
     height: 5.1rem
     background: linear-gradient(to right, rgba(52, 52, 52, 0.2), rgba(86, 86, 86, 0.2), rgba(52, 52, 52, 0.2))
 
-.content
-    +flex(row, space-between, center)
-    width: 56rem
+    .content
+        +flex(row, space-between, center)
+        width: 56rem
 
-ul
-    +flex(row, space-between, center)
-    width: 23.9rem
+        .logo
+            width: 3.3rem
+            height: 2.1rem
 
-a
-    text-decoration: none
-    color: #FFFFFF
+        ul
+            +flex($align-items: center, $gap: 125)
+            width: 23.9rem
+
+            a
+                text-decoration: none
+                color: #FFFFFF
+                +transition(color, .3)
+
+                &:hover
+                    color: rgba(255, 255, 255, .7)
 </style>

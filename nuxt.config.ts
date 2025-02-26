@@ -16,14 +16,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/sass/main.sass'],
   vite: {
-	css: {
-		preprocessorOptions: {
-				sass: {
-					additionalData: '@use "~/assets/sass/_mixins.sass" as *',
-				},
-			},
-		},
-	},
+    css: {
+        preprocessorOptions: {
+                sass: {
+                    additionalData: '@use "~/assets/sass/_mixins.sass" as *',
+                },
+            },
+        },
+    },
   components: [
     {
       path: '~/components',

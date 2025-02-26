@@ -7,7 +7,7 @@ p.Text(
 </template>
 
 <script lang='ts' setup>
-type FontWeight = "thin" | "light" | "regular" | "medium" | "semi" | "bold"
+type FontWeight = "thin" | "light" | "medium" | "semi" | "bold"
 
 interface Text {
     fontWeight?: FontWeight // начертание текста
@@ -19,6 +19,8 @@ const props = defineProps<Text>()
 
 <style lang='sass' scoped>
 .Text
+    font-weight: 400
+
     &.grey
         color: rgba(255, 255, 255, .6)
     
@@ -27,9 +29,6 @@ const props = defineProps<Text>()
 
     &.light
         font-weight: 300
-
-    &.regular
-        font-weight: 400
 
     &.medium
         font-weight: 500

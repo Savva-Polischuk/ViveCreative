@@ -3,8 +3,7 @@ section.Block(:aria-label="props.titleBlock")
     .section-header
         .left-line
             Line.gr-to-light
-        Heading(hSize='h2')
-            Text.bold {{titleBlock}}
+        Heading(hSize='h2') {{ props.titleBlock }}
         .right-line
             Line.gr-to-dark
     slot
@@ -33,6 +32,6 @@ const props = defineProps<Title>()
             width: 100%
             overflow: hidden
         
-        .Text
+        .Heading
             white-space: nowrap
 </style>

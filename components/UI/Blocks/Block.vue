@@ -3,7 +3,7 @@
 //- При объявлении компонента пишем переменную в kebab-case для добавления заголовка
 //- Например (title-block = "В чем наше преимущество")
 
-section.Block
+section.Block(:aria-label="props.titleBlock")
     .left-line
         Line.gr-to-light
     Heading(hSize='h2')
@@ -24,7 +24,7 @@ const props = defineProps<Title>()
 
 <style lang='sass' scoped>
 .Block
-    +flex($align-items: center, $gap: 70)
+    +flex($align-items: center, $gap: 3.5)
 
     .left-line
         width: 16%

@@ -37,7 +37,7 @@ header.Header
             height: 2.1rem
 
         ul
-            +flex($align-items: center, $gap: 125)
+            +flex($align-items: center, $gap: 6.25)
             width: 23.9rem
 
             a

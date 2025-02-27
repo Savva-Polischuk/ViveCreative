@@ -1,6 +1,6 @@
 <template lang='pug'>
 Header
-Block(title-block = "Услуги")
+Block(titleBlock="Услуги")
 Footer
 </template>
 

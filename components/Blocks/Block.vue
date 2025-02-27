@@ -1,0 +1,38 @@
+<template lang='pug'>
+section.Block(:aria-label="props.titleBlock")
+    .section-header
+        .left-line
+            Line.gr-to-light
+        Heading(hSize='h2')
+            Text.bold {{titleBlock}}
+        .right-line
+            Line.gr-to-dark
+    slot
+</template>
+
+<script lang='ts' setup>
+
+interface Title {
+    titleBlock?: string // заголовок блока
+}
+
+const props = defineProps<Title>()
+</script>
+
+<style lang='sass' scoped>
+.Block
+    min-height: 20rem
+
+    .section-header
+        +flex($align-items: center, $gap: 3.5)
+
+        .left-line
+            width: 16%
+        
+        .right-line
+            width: 100%
+            overflow: hidden
+        
+        .Text
+            white-space: nowrap
+</style>

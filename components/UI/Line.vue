@@ -38,11 +38,11 @@ const props = defineProps<Props>()
         border-image-slice: 1
     
     &.vertical-gr-to-dark
-    border: 1px solid transparent
-    border-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
-    -moz-border-image: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
-    -webkit-border-image: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
-    border-image-slice: 1
+        border: 1px solid transparent
+        border-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
+        -moz-border-image: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
+        -webkit-border-image: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
+        border-image-slice: 1
     
     &.vertical-gr-to-light
         border: 1px solid transparent

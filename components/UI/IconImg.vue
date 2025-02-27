@@ -1,5 +1,5 @@
 <template lang='pug'>
-Icon.IconImg(:name="'icon:' + props.name")
+Icon.IconImg(:name="props.name")
 </template>
 
 <script lang='ts' setup>
@@ -12,6 +12,6 @@ const props = defineProps<Icon>()
 
 <style lang='sass' scoped>
 .IconImg
-    width: 100%
+    width: inherit
     height: 100%
 </style>

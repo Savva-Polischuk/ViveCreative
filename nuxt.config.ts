@@ -9,6 +9,12 @@ export default defineNuxtConfig({
       {
         prefix: 'icon',
         dir: './assets/icons',
+        normalizeIconName: false
+      },
+      {
+        prefix: 'msg',
+        dir: './assets/icons/messengers',
+        normalizeIconName: false
       },
     ],
   },

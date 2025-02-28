@@ -25,6 +25,7 @@ const inputModel = defineModel()
 <style lang='sass' scoped>
 .Input
     +flex(column, $gap: .2)
+    width: 100%
 
     label
         color: rgba(255, 255, 255, .6)
@@ -42,4 +43,10 @@ const inputModel = defineModel()
         outline: none
         font-size: 1.2rem 
 
+        // &:-webkit-autofill,
+        // &:-webkit-autofill:hover,
+        // &:-webkit-autofill:focus,
+        // &:-webkit-autofill:active
+        //     transition: background-color 5000s ease-in-out 0s;
+        //     -webkit-text-fill-color: #fff !important;
 </style>

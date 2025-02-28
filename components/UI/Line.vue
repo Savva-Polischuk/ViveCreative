@@ -1,5 +1,5 @@
 <template lang='pug'>
-.Line
+.Line(:class="{ vertical: props.isVertical }")
 </template>
 
 <script lang='ts' setup>

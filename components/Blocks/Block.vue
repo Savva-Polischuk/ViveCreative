@@ -22,16 +22,19 @@ const props = defineProps<Title>()
 <style lang='sass' scoped>
 .Block
     min-height: 20rem
+    background-repeat: no-repeat
+    background-position-x: center
 
     .section-header
         +flex($align-items: center, $gap: 3.5)
 
         .left-line
-            width: 16%
+            width: 31%
+            max-width: 16.5rem
         
         .right-line
             width: 100%
-            overflow: hidden
+            max-width: 51.5rem
         
         .Heading
             white-space: nowrap

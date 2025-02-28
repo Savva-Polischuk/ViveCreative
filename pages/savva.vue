@@ -1,7 +1,7 @@
 <template lang='pug'>
 Block.application(titleBlock="Оставить заявку")
     .application-body
-        form
+        .form
             .name-and-phone
                 Input.name(
                     v-model="clientName"
@@ -12,11 +12,13 @@ Block.application(titleBlock="Оставить заявку")
                     v-model="clientPhone"
                     label="Телефон"
                     name="phone"
+                    type="tel"
                     isRequired)
             Input.email(
                 v-model="clientEmail"
                 label="Эл. Почта"
-                name="email")
+                name="email"
+                type="email")
             Input.appeal(
                 v-model="clientAppeal"
                 label="Кратко опишите Ваш запрос"
@@ -45,7 +47,7 @@ const handleSubmitClick = () => {
         +flex($justify-content: center, $align-items: center)
         height: 32rem
 
-        form
+        .form
             +flex(column, $gap: 1.5)
             width: 41.75rem
 

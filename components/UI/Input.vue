@@ -8,17 +8,22 @@
     input(
         v-model="inputModel"
         :name="props.name"
-        )
+        :type="props.type")
 </template>
 
 <script lang='ts' setup>
+type InputType = 'text' | 'tel' | 'email' 
+
 interface Input {
-    label: string
-    isRequired?: boolean
-    name: string
+    name: string // Уникальное название для input
+    label?: string // Текст лэйбла, который над полем ввода (если не указать то лэйбла не будет)
+    isRequired?: boolean // true если обязательно (появится звездочка над лэйблом)
+    type?: InputType // тип инпута (текст, телефон, почта) по-умолчанию текст
 }
 
-const props = defineProps<Input>()
+const props = withDefaults(defineProps<Input>(), {
+    type: 'text'
+})
 const inputModel = defineModel()
 </script>
 

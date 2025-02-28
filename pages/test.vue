@@ -10,14 +10,14 @@ Block.characteristics(titleBlock="Наши ценности")
     .characteristics-content
         .top
             .char-top(v-for="item in characteristicsTop")
-                Line.vertical.gr-to-dark
+                Line.gr-to-dark(isVertical)
                 .text
                     Text(fontSize="1.8rem", fontWeight="bold") {{item.char}}
                     Text(style="opacity: .6", fontWeight="medium") {{item.addition}}
-            Line.vertical.gr-to-dark
+            Line.gr-to-dark(isVertical)
         .bottom
             .char-bottom(v-for="item, index in characteristicsBottom")
-                Line.vertical.gr-to-dark(v-if="index != 0")
+                Line.gr-to-dark(v-if="index != 0", isVertical)
                 .text
                     Text(fontSize="1.8rem", fontWeight="bold") {{item.char}}
                     Text(style="opacity: .6", fontWeight="medium") {{item.addition}}
@@ -26,9 +26,9 @@ Block.our-advantages(titleBlock="В чем наше преимущество")
     .our-advantages-body
         .advantage(v-for="item, index in advantages" :class="index % 2 == 0 ? 'to-left' : 'to-right'")
             Text.number(fontSize="19rem", fontWeight="bold" v-if="index != 0") 0{{index}}
-            .adv-text
+            .adventage-text(v-if="index != 0")
                 Heading(hSize="h3") {{item.advHead}}
-                Text(fontSize="1.6rem", fontWeight="regular") {{item.advDescription}}
+                Text(fontSize="1.6rem", fontWeight="regular" style="opacity: .6") {{item.advDescription}}
 
 Footer
 </template>
@@ -95,13 +95,18 @@ Footer
                 +flex(column, $align-items: center)
 
 .our-advantages
-    height: 108.5rem
+    height: 100rem
+    background-image: url('assets/backgrounds/advantagesBGLeft.svg'), url('assets/backgrounds/advantagesBGRight.svg')
+    background-position: left, right
 
     .our-advantages-body
         +flex(column, center, center, $gap: 10)
+        height: 91.75rem
 
         .to-right
             +flex(row, $align-items: center, $gap: 2.75)
+            width: 54.25rem
+            height: 14.25rem
 
             .number
                 // font-family: 'JosefinSans'
@@ -109,13 +114,14 @@ Footer
                 // font-weight: 700
                 // font-style: normal
 
-            .adv-text
+            .adventage-text
                 +flex(column, $gap: 1, $align-items: start)
-                width: 32.25
-                height: 9.3
+                width: 32.25rem
+                height: 9.3rem
 
         .to-left
             +flex(row-reverse, $align-items: center, $gap: 2.75)
+            height: 14.25rem
 
             .number
                 // font-family: 'JosefinSans'
@@ -123,9 +129,10 @@ Footer
                 // font-weight: 700
                 // font-style: normal
 
-            .adv-text
-                +flex(column, $gap: 1, $align-items: start)
-                width: 32.25
-                height: 9.3
+            .adventage-text
+                +flex(column, $gap: 1, $align-items: end)
+                width: 32.25rem
+                height: 9.3rem
+                text-align: right
 
 </style>

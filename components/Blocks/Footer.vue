@@ -7,15 +7,15 @@ footer.Footer
             .info
                 .help
                     Heading(hSize='h5')
-                        Text.semi Помощь и сервис
+                        Text(fontWeight="semi") Помощь и сервис
                     .contact
-                        Text.bold ТГ 
+                        Text(fontWeight="bold") ТГ 
                         Text @vivecreative
                     .contact
-                        Text.bold Почта 
+                        Text(fontWeight="bold") Почта 
                         Text vivecreative@ya.ru
                     .contact
-                        Text.bold ИНН 
+                        Text(fontWeight="bold") ИНН 
                         Text 0000000000000000
                 Line.vertical.gr-to-light
                 nav

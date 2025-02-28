@@ -1,55 +1,9 @@
 <template lang='pug'>
-Header
 
-Block.main(isMain)
-    .main-content
-        Heading.gradient(hSize="h2") Создаем, настраиваем, продвигаем
-        Heading.gradient(hSize="h1") Вы — наслаждаетесь результатом
-
-Block.characteristics(titleBlock="Наши ценности")
-    .characteristics-content
-        .top
-            .char-top(v-for="item in characteristicsTop")
-                Line.gr-to-dark(isVertical)
-                .text
-                    Text(fontSize="1.8rem", fontWeight="bold") {{item.char}}
-                    Text(style="opacity: .6", fontWeight="medium") {{item.addition}}
-            Line.gr-to-dark(isVertical)
-        .bottom
-            .char-bottom(v-for="item, index in characteristicsBottom")
-                Line.gr-to-dark(v-if="index != 0", isVertical)
-                .text
-                    Text(fontSize="1.8rem", fontWeight="bold") {{item.char}}
-                    Text(style="opacity: .6", fontWeight="medium") {{item.addition}}
-
-Block.our-advantages(titleBlock="В чем наше преимущество")
-    .our-advantages-body
-        .advantage(v-for="item, index in advantages" :class="index % 2 == 0 ? 'to-left' : 'to-right'")
-            Text.number(fontSize="19rem", fontWeight="bold" v-if="index != 0") 0{{index}}
-            .adventage-text(v-if="index != 0")
-                Heading(hSize="h3") {{item.advHead}}
-                Text(fontSize="1.6rem", fontWeight="regular" style="opacity: .6") {{item.advDescription}}
-
-Footer
 </template>
 
 <script lang='ts' setup>
-    const characteristicsTop = [
-        {char: 'Качество', addition: 'Совершенство во всем'},
-        {char: 'Инновации', addition: 'Технологии для роста'},
-    ]
-    const characteristicsBottom = [
-        {char: 'Поддержка', addition: 'Всегда рядом'},
-        {char: 'Индивидуальность', addition: 'Уникальные решения'},
-        {char: 'Серьезность', addition: 'На деле, а не словах'},
-    ]
-    const advantages = [
-        {advHead: '', advDescription: ''},
-        {advHead: 'КОМПЛЕКСНЫЙ ПОДХОД', advDescription: 'создаем веб-решения, объединяя качество, функциональность и эффективность'},
-        {advHead: 'ПОЛНЫЙ ЦИКЛ УСЛУГ', advDescription: 'от разработки и дизайна до SEO и аналитики, закрывая все потребности бизнеса'},
-        {advHead: 'КОМАНДА ПРОФИ', advDescription: 'опытные специалисты обеспечивают надежную реализацию проектов.'},
-        {advHead: 'РОСТ ВАШЕГО БИЗНЕСА', advDescription: 'долгосрочное сотрудничество и стратегический подход помогаютвам развиваться'}
-    ]
+
 </script>
 
 <style lang='sass' scoped>
@@ -96,8 +50,8 @@ Footer
 
 .our-advantages
     height: 100rem
-    background-image: url('assets/backgrounds/advantagesBGGroup.svg')
-    background-position-y: 60%
+    background-image: url('assets/backgrounds/advantagesBGLeft.svg'), url('assets/backgrounds/advantagesBGRight.svg')
+    background-position: left, right
 
     .our-advantages-body
         +flex(column, center, center, $gap: 10)
@@ -109,6 +63,7 @@ Footer
             height: 14.25rem
 
             .number
+                font-family: 'JosefinSans'
                 color: rgba(255, 255, 255, .2)
 
             .adventage-text
@@ -121,7 +76,7 @@ Footer
             height: 14.25rem
 
             .number
-                color: rgba(255, 255, 255, .2)
+                font-family: 'JosefinSans'
 
             .adventage-text
                 +flex(column, $gap: 1, $align-items: end)

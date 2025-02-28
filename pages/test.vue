@@ -10,17 +10,17 @@ Block(titleBlock="Наши ценности").characteristics
     .characteristics-content
         .top
             .char-top(v-for="item in characteristicsTop")
-                Line.vertical.vertical-gr-to-dark
+                Line.vertical.gr-to-dark
                 .text
                     Text.bold(fontSize="1.8rem") {{item.char}}
                     Text.medium(style="opacity: .6") {{item.addition}}
-            Line.vertical.vertical-gr-to-dark
+            Line.vertical.gr-to-dark
         .bottom
             .char-bottom(v-for="item in characteristicsBottom")
                 .text
                     Text.bold(fontSize="1.8rem") {{item.char}}
                     Text.medium(style="opacity: .6") {{item.addition}}
-                Line.vertical.vertical-gr-to-dark
+                Line.vertical.gr-to-dark
 
 Footer
 </template>
@@ -42,7 +42,6 @@ Footer
     +flex($justify-content: center, $align-items: center)
     height: 34.5rem
     background-image: url("assets/backgrounds/mainPageBG.svg")
-    background-repeat: no-repeat
     background-position-y: center
 
     .main-content
@@ -52,7 +51,6 @@ Footer
 .characteristics
     height: 44.5rem
     background-image: url("assets/backgrounds/characteristicsBG.svg")
-    background-repeat: no-repeat
     background-position-y: 90%
 
     .characteristics-content

@@ -17,7 +17,7 @@ footer.Footer
                     .contact
                         Text.bold ИНН 
                         Text 0000000000000000
-                Line.vertical.vertical-gr-to-light
+                Line.vertical.gr-to-light
                 nav
                     ul
                         li

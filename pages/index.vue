@@ -1,7 +1,5 @@
 <template lang='pug'>
-Header
-Block(titleBlock="Услуги")
-Footer
+
 </template>
 
 <script lang='ts' setup>

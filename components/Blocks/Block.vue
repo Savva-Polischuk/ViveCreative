@@ -1,6 +1,6 @@
 <template lang='pug'>
 section.Block(:aria-label="props.titleBlock")
-    .section-header
+    .section-header(v-if="!props.isMain")
         .left-line
             Line.gr-to-light
         Heading(hSize='h2') {{ props.titleBlock }}
@@ -13,6 +13,7 @@ section.Block(:aria-label="props.titleBlock")
 
 interface Title {
     titleBlock?: string // заголовок блока
+    isMain?: boolean    // для главного блока
 }
 
 const props = defineProps<Title>()

@@ -96,8 +96,8 @@ Footer
 
 .our-advantages
     height: 100rem
-    background-image: url('assets/backgrounds/advantagesBGLeft.svg'), url('assets/backgrounds/advantagesBGRight.svg')
-    background-position: left, right
+    background-image: url('assets/backgrounds/advantagesBG.svg')
+    background-position-y: 60%
 
     .our-advantages-body
         +flex(column, center, center, $gap: 10)
@@ -110,6 +110,7 @@ Footer
 
             .number
                 font-family: 'JosefinSans'
+                color: rgba(255, 255, 255, .2)
 
             .adventage-text
                 +flex(column, $gap: 1, $align-items: start)
@@ -122,6 +123,7 @@ Footer
 
             .number
                 font-family: 'JosefinSans'
+                color: rgba(255, 255, 255, .2)
 
             .adventage-text
                 +flex(column, $gap: 1, $align-items: end)

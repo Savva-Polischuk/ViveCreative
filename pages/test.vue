@@ -109,10 +109,7 @@ Footer
             height: 14.25rem
 
             .number
-                // font-family: 'JosefinSans'
-                // src: url('../fonts/JosefinSans-Bold.ttf') format('truetype')
-                // font-weight: 700
-                // font-style: normal
+                font-family: 'JosefinSans'
 
             .adventage-text
                 +flex(column, $gap: 1, $align-items: start)
@@ -124,15 +121,11 @@ Footer
             height: 14.25rem
 
             .number
-                // font-family: 'JosefinSans'
-                // src: url('../fonts/JosefinSans-Bold.ttf') format('truetype')
-                // font-weight: 700
-                // font-style: normal
+                font-family: 'JosefinSans'
 
             .adventage-text
                 +flex(column, $gap: 1, $align-items: end)
                 width: 32.25rem
                 height: 9.3rem
                 text-align: right
-
 </style>

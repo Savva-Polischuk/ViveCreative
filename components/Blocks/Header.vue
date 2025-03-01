@@ -1,9 +1,10 @@
 <template lang='pug'>
 header.Header
     .content
-        .logo
-            NuxtLink(to='/')
-                IconImg(name="mainLogo")
+        NuxtLink.logo(
+            to='/',
+            aria-label="Vive Creative логотип")
+            IconImg(name="icon:mainLogo")
         nav
             ul
                 li

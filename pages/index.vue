@@ -1,5 +1,7 @@
 <template lang='pug'>
-TimeLine(:stages="[{order: 0, text: 'Лендинги'}, {order: 1, text: 'Корпоративные сайты'}]")
+Header
+Block(title-block = "Услуги")
+Footer
 </template>
 
 <script lang='ts' setup>

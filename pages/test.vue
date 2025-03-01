@@ -30,6 +30,26 @@ Block.our-advantages(titleBlock="В чем наше преимущество")
                 Heading(hSize="h3") {{item.advHead}}
                 Text(fontSize="1.6rem", fontWeight="regular" style="opacity: .6") {{item.advDescription}}
 
+Block.rates(titleBlock="Тарифы")
+    .rates-body
+        .rate(v-for="item,index in rates")
+            .project-and-rate
+                Heading(hSize="h5") {{item.project}}
+                .cost
+                    Text(fontSize="1.6rem", fontWeight="regular") от
+                    Heading(hSize="h5") {{item.rate}}
+            Line.gr-light-dark-light(v-if="index != 4")
+
+Block.contacts(titleBlock="Контакты")
+    .contacts-content
+        .contacts-body
+            .contact(v-for="item in contacts")
+                NuxtLink.msg(:to="item.contLink" :style="{width: item.iconWidth}")
+                    IconImg.msg-img(:name="item.contIcon")
+                .contact-text
+                    Text(hSize="1.2rem", fontWeight="bold") {{item.contHead}}
+                    Text.contact-text-desc(hSize="1rem") {{item.contDesc}}
+
 Footer
 </template>
 
@@ -49,6 +69,19 @@ Footer
         {advHead: 'ПОЛНЫЙ ЦИКЛ УСЛУГ', advDescription: 'от разработки и дизайна до SEO и аналитики, закрывая все потребности бизнеса'},
         {advHead: 'КОМАНДА ПРОФИ', advDescription: 'опытные специалисты обеспечивают надежную реализацию проектов.'},
         {advHead: 'РОСТ ВАШЕГО БИЗНЕСА', advDescription: 'долгосрочное сотрудничество и стратегический подход помогаютвам развиваться'}
+    ]
+    const rates = [
+        {project: 'Продвижение (SEO, аналитика, аудит)', rate: '5 000 ₽'},
+        {project: 'Редизайн и адаптивная верстка', rate: '20 000 ₽'},
+        {project: 'Лендинг / Корпоративный сайт', rate: '30 000 ₽'},
+        {project: 'Интернет-магазин', rate: '120 000 ₽'},
+        {project: 'Порталы и сложные веб-приложения', rate: '300 000 ₽'}
+    ]
+    const contacts = [
+        {contIcon: 'msg:telegram', contHead: 'Telegram', contDesc: 'новости, статьи, чек-листы, поддержка клиентов', iconWidth: '3.05rem', contLink: 'https://t.me/vivecreative'},
+        {contIcon: 'msg:instagram', contHead: 'Instagram', contDesc: 'кейсы, визуальный контент, сторис, процесс работы', iconWidth: '3.1rem', contLink: 'https://www.instagram.com/vivecreative'},
+        {contIcon: 'msg:vk', contHead: 'VK', contDesc: 'новости, обсуждения, поддержка клиентов', iconWidth: '3.5rem', contLink: 'https://vk.com/vivecreative'},
+        {contIcon: 'msg:youtube', contHead: 'YouTube', contDesc: 'новости, гайды, разборы кейсов', iconWidth: '3.5rem', contLink: 'https://www.youtube.com/@ViveCreativeWeb'}
     ]
 </script>
 
@@ -130,4 +163,62 @@ Footer
                 width: 32.25rem
                 height: 9.3rem
                 text-align: right
+
+.rates
+    background-image: url('assets/backgrounds/ratesBG.svg')
+    background-position-y: 70%
+
+    .rates-body
+        +flex(column, center, center, $gap: 3.3)
+        height: 55.5rem
+
+        .rate
+            +flex(column, $gap: 3.3)
+            width: 56rem
+
+            .project-and-rate
+                +flex(row, space-between)
+                width: 53.3rem
+
+                .cost
+                    +flex($justify-content: start, $gap: .5)
+                    width: 10.9rem
+
+.contacts
+    height: 28.25rem
+    
+
+    .contacts-content
+        +flex($justify-content: center, $align-items: center)
+        background-image: url('assets/backgrounds/contactsBG.svg')
+        background-repeat: no-repeat
+        background-position-x: center
+        background-position-y: 30%
+        width: 100%
+        height: 25.75rem
+        
+        
+
+        .contacts-body
+            +flex(row, space-between, $wrap: wrap)
+            width: 47.75rem
+            height: 15rem
+
+
+            .contact
+                +flex(row, $gap: 2)
+                height: 4.5rem
+                width: 19.1rem
+
+                .msg
+                    +flex($align-items: center)
+
+                .contact-text
+                    +flex(column, center, start, $gap: .4)
+
+                    .contact-text-desc
+                        font-family: 'SpaceGrotesk'
+                        font-weight: 500
+                        color: rgba(255, 255, 255, .6)
+
 </style>

@@ -35,13 +35,13 @@ footer.Footer
         .messenger
             .left-line
                 Line.gr-to-light
-            NuxtLink.messenger-icon(to='/')
+            NuxtLink.messenger-icon(to='https://t.me/vivecreative')
                 IconImg(name="msg:telegram")
-            NuxtLink.messenger-icon(to='/')
+            NuxtLink.messenger-icon(to='https://www.instagram.com/vivecreative')
                 IconImg(name="msg:instagram")
-            NuxtLink.messenger-icon(to='/')
+            NuxtLink.messenger-icon(to='https://vk.com/vivecreative')
                 IconImg(name="msg:vk")
-            NuxtLink.messenger-icon(to='/')
+            NuxtLink.messenger-icon(to='https://www.youtube.com/@ViveCreativeWeb')
                 IconImg(name="msg:youtube")
             .right-line
                 Line.gr-to-dark

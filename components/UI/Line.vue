@@ -29,6 +29,13 @@ const props = defineProps<Props>()
         -moz-border-image: -moz-linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         -webkit-border-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         border-image-slice: 1
+
+    &.gr-light-dark-light
+        border: 1px solid transparent
+        border-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
+        -moz-border-image: -moz-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
+        -webkit-border-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
+        border-image-slice: 1
     
     &.vertical
         border-right: 1px solid #fff

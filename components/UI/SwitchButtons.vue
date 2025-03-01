@@ -6,8 +6,7 @@
             :id="label.id"
             :value="label.id"
             type="radio"
-            name="radio"
-        )
+            name="radio")
         label(:for="label.id") {{ label.text }}
 </template>
 
@@ -26,7 +25,7 @@ const check = defineModel()
 
 <style lang='sass' scoped>
 .SwitchButtons
-    +flex(row, center, center, $gap: 58)
+    +flex(row, center, center, $gap: 2.9)
     height: 3rem
 
     .radio-button

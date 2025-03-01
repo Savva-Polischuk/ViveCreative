@@ -1,4 +1,7 @@
 <template lang='pug'>
+Block.services(titleBlock="Услуги")
+    .services-body
+        TimeLineSwitcher
 Block.application(titleBlock="Оставить заявку")
     .application-body
         .form
@@ -38,14 +41,21 @@ const handleSubmitClick = () => {
 </script>
 
 <style lang='sass' scoped>
+.services
+    background-image: url("assets/backgrounds/servicesBG.svg")
+    +flex(column, $gap: 4.75)
+
+    .services-body
+        height: 48.5rem
+
 .application
-    // background-image: url("assets/backgrounds/mainPageBG.svg")
-    // background-position-y: 90%
+    background-image: url("assets/backgrounds/applicationBG.svg")
+    background-position-y: 100%
 
 
     .application-body
         +flex($justify-content: center, $align-items: center)
-        height: 32rem
+        height: 38rem
 
         .form
             +flex(column, $gap: 1.5)

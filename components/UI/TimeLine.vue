@@ -1,6 +1,6 @@
 <template lang='pug'>
 .TimeLine(v-if="props.stages")
-    .time(:style="{bottom: (props.isDoubleLastLine ? '23px' : '11px')}")
+    .main-line(:style="{bottom: (props.isDoubleLastLine ? '23px' : '11px')}")
     .container(
         v-for="stage in props.stages"
         :class="stage.order % 2 === 0 ? 'left' : 'right'"
@@ -42,7 +42,7 @@ const props = defineProps<TimeLine>()
     margin: 0 auto
     box-sizing: border-box
 
-    .time
+    .main-line
         content: ''
         position: absolute
         width: 3px

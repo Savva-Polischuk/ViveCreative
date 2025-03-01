@@ -30,11 +30,9 @@ const props = defineProps<Title>()
 
         .left-line
             width: 31%
-            max-width: 16.5rem
         
         .right-line
             width: 100%
-            max-width: 51.5rem
         
         .Heading
             white-space: nowrap

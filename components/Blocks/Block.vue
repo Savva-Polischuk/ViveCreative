@@ -29,11 +29,10 @@ const props = defineProps<Title>()
         +flex($align-items: center, $gap: 3.5)
 
         .left-line
-            width: 31%
+            min-width: 15.9%
         
         .right-line
             width: 100%
-            max-width: 61.9rem
         
         .Heading
             white-space: nowrap

@@ -6,9 +6,12 @@
         :for="props.name"
         ) {{ props.label }}
     input(
-        v-model="inputModel"
+        v-model.trim="inputModel"
         :name="props.name"
-        :type="props.type")
+        :type="props.type"
+        :required="isRequired"
+        :pattern="inputPattern(props.type)"
+        maxlength="200")
 </template>
 
 <script lang='ts' setup>
@@ -24,7 +27,14 @@ interface Input {
 const props = withDefaults(defineProps<Input>(), {
     type: 'text'
 })
-const inputModel = defineModel()
+const inputModel = defineModel<string>()
+
+const inputPattern = (type: InputType) => {
+    switch (type) {
+        case 'tel':
+            return '^[0-9]{3,45}$'
+    }
+}
 </script>
 
 <style lang='sass' scoped>
@@ -52,6 +62,6 @@ const inputModel = defineModel()
         // &:-webkit-autofill:hover,
         // &:-webkit-autofill:focus,
         // &:-webkit-autofill:active
-        //     transition: background-color 5000s ease-in-out 0s;
-        //     -webkit-text-fill-color: #fff !important;
+        //     transition: background-color 5000s ease-in-out 0s
+        //     -webkit-text-fill-color: #fff !important
 </style>

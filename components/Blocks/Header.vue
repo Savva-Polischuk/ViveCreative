@@ -16,7 +16,7 @@ header.Header
                 li 
                     NuxtLink(to='/')
                         Text(fontSize="1rem") Контакты
-        Button Заказать проект
+        Button(@onClick="navigateTo('#application')") Заказать проект
 </template>
 
 <script lang='ts' setup>

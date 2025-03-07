@@ -48,6 +48,9 @@ h1, h2, h3, h4, h5
         background-image: linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
         white-space: nowrap
         width: min-content
-    
+
+    &.dynamic
+        color: transparent
+        pointer-events: none
 
 </style>

@@ -2,9 +2,9 @@
 Header
 
 Block.main(isMain)
-    .main-content
-        Heading.gradient(hSize="h2") Создаем, настраиваем, продвигаем
-        Heading.gradient(hSize="h1") Вы — наслаждаетесь результатом
+    .main-content(@mousemove="moveSpotlight")
+        Heading.dynamic(hSize="h2") Создаем, настраиваем, продвигаем
+        Heading.dynamic(hSize="h1") Вы — наслаждаетесь результатом
 
 
 Block.services(titleBlock="Услуги")
@@ -90,6 +90,14 @@ Footer
 </template>
 
 <script lang='ts' setup>
+const spotX: Ref<string | number> = ref(0)
+const spotY: Ref<string | number> = ref(0)
+
+function moveSpotlight(event: MouseEvent) {
+    spotX.value = event.offsetX + "px"
+    spotY.value = event.offsetY + "px"
+}
+
 const characteristicsTop = [
     {char: 'Качество', addition: 'Совершенство во всем'},
     {char: 'Инновации', addition: 'Технологии для роста'},
@@ -135,6 +143,8 @@ const contacts = [
     .main-content
         +flex(column, $align-items: center, $gap: 14.7)
         margin-bottom: 4rem
+        background-image: radial-gradient(circle at v-bind(spotX) v-bind(spotY), rgba(255, 255, 255, 1) 50px, rgba(255, 255, 255, .5) 100px)
+        background-clip: text
 
 ///////
 .services

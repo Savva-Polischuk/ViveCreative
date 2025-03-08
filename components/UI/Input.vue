@@ -32,7 +32,7 @@ const inputModel = defineModel<string>()
 const inputPattern = (type: InputType) => {
     switch (type) {
         case 'tel':
-            return '^[0-9]{3,45}$'
+            return '^[\+]?[0-9 ]{3,45}$'
     }
 }
 </script>

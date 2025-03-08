@@ -37,21 +37,31 @@ const resetForm = () => {
     clientAppeal.value = ''
 }
 
-const handleSubmitClick = () => {
-    sendApplicationToTelegram({
-        name: clientName.value,
-        phone: clientPhone.value,
-        email: clientEmail.value,
-        appeal: clientAppeal.value
-    }).then(res => {
-        res.ok ? alert("Данные успешно отправленны") : alert("Произошла ошибка, повторите отправку")
-    }).catch(error => {
-        console.error(`Error: ${error}`)
-    }).finally(() => {
-        setTimeout(() => {
+const handleSubmitClick = async () => {
+    await fetch('api/telegramBot', {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: clientName.value,
+            phone: clientPhone.value.replaceAll(' ', ''),
+            email: clientEmail.value,
+            appeal: clientAppeal.value
+        })
+    }).then(response => response.json())
+    .then(res => {
+        if (res.ok) {
+            alert("Данные успешно отправленны")
             navigateTo('/')
             resetForm()
-        }, 100)
+        } 
+        else {
+            alert("Произошла ошибка, повторите отправку")
+        }
+    })
+    .catch(error => {
+        console.error(`Error: ${error}`)
     })
 }
 </script>

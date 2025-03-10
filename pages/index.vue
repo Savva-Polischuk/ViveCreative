@@ -3,8 +3,9 @@ Header
 
 Block.main(isMain)
     .main-content(@mouseenter="showSpotligh", @mousemove="moveSpotlight", @mouseleave="hideSpotligh" :style="{'background-image': spotlightPos}")
-        Heading.dynamic(hSize="h2") Создаем, настраиваем, продвигаем
-        Heading.dynamic(hSize="h1") Вы — наслаждаетесь результатом
+        Heading.dynamic(hSize="h1" style="margin-bottom: 7px") VIVE CREATIVE
+        Text.dynamic(fontWeight="semi" fontSize="2rem") Создаем, настраиваем, продвигаем
+        Text.dynamic(fontWeight="semi" fontSize="1.6rem") Вы — наслаждаетесь результатом
 
 
 Block.services(titleBlock="Услуги")
@@ -36,7 +37,7 @@ Block.our-advantages(titleBlock="В чем наше преимущество")
             Text.number(fontSize="19rem", fontWeight="bold" v-if="index != 0") 0{{index}}
             .adventage-text(v-if="index != 0")
                 Heading(hSize="h3") {{item.advHead}}
-                Text(fontSize="1.6rem", fontWeight="regular" style="opacity: .6") {{item.advDescription}}
+                Text(fontSize="1.6rem", fontWeight="regular" style="opacity: .6; width: 100%") {{item.advDescription}}
 
 
 Block.rates(titleBlock="Тарифы")
@@ -77,8 +78,8 @@ const innerCircleSize = ref<string | number>(0)
 const outerCircleSize = ref<string | number>(0)
 
 const showSpotligh = () => {
-    innerCircleSize.value = 100 + 'px'
-    outerCircleSize.value = 200 + 'px'
+    innerCircleSize.value = 30 + 'px'
+    outerCircleSize.value = 150 + 'px'
 }
 
 const moveSpotlight = (event: MouseEvent) => {
@@ -92,7 +93,7 @@ const hideSpotligh = () => {
 }
 
 const spotlightPos = computed(() => {
-    return 'radial-gradient(circle at ' + spotX.value  + ' ' + spotY.value + ', rgba(255, 255, 255, 1) ' + innerCircleSize.value + ', rgba(255, 255, 255, .5) ' + outerCircleSize.value + ')'
+    return 'radial-gradient(circle at ' + spotX.value  + ' ' + spotY.value + ', rgba(255, 255, 255, .9) ' + innerCircleSize.value + ', rgba(255, 255, 255, .7) ' + outerCircleSize.value + ')'
 })
 
 const characteristicsTop = [
@@ -108,10 +109,10 @@ const characteristicsBottom = [
 
 const advantages = [
     {advHead: '', advDescription: ''},
-    {advHead: 'КОМПЛЕКСНЫЙ ПОДХОД', advDescription: 'создаем веб-решения, объединяя качество, функциональность и эффективность'},
-    {advHead: 'ПОЛНЫЙ ЦИКЛ УСЛУГ', advDescription: 'от разработки и дизайна до SEO и аналитики, закрывая все потребности бизнеса'},
-    {advHead: 'КОМАНДА ПРОФИ', advDescription: 'опытные специалисты обеспечивают надежную реализацию проектов.'},
-    {advHead: 'РОСТ ВАШЕГО БИЗНЕСА', advDescription: 'долгосрочное сотрудничество и стратегический подход помогаютвам развиваться'}
+    {advHead: 'КОМПЛЕКСНЫЙ ПОДХОД', advDescription: 'Разрабатываем веб-решения, обеспечивающие баланс качества, функциональности и эффективности'},
+    {advHead: 'ПОЛНЫЙ ЦИКЛ УСЛУГ', advDescription: 'Решение для бизнеса, охватывающее все этапы от разработки и дизайна до SEO и аналитики'},
+    {advHead: 'КОМАНДА ПРОФИ', advDescription: 'Опытные специалисты обеспечивают надежную реализацию проектов.'},
+    {advHead: 'РОСТ ВАШЕГО БИЗНЕСА', advDescription: 'Долгосрочное сотрудничество и стратегический подход помогаютвам развиваться'}
 ]
 
 const rates = [
@@ -134,15 +135,19 @@ const contacts = [
 .main
     +flex($justify-content: center, $align-items: center)
     height: 34.5rem
-    background-image: url("assets/backgrounds/mainPageBG.svg")
+    background-image: url("assets/backgrounds/mainBlockBG.svg")
     background-position-y: center
 
     .main-content
-        +flex(column, $align-items: center, $gap: 14.7)
+        +flex(column, $align-items: center, $gap: 1)
         padding: 4rem
-        margin-bottom: 4rem
-        background-image: radial-gradient(circle at 0 0, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, .5) 0)
+        // margin-bottom: 4rem
+        background-image: radial-gradient(circle at 0 0, rgba(255, 255, 255, .9) 0, rgba(255, 255, 255, .7) 0)
         background-clip: text
+
+        .dynamic
+            color: transparent
+            pointer-events: none
 
 ///////
 .services
@@ -196,7 +201,6 @@ const contacts = [
 
         .to-right
             +flex(row, $align-items: center, $gap: 2.75)
-            width: 54.25rem
             height: 14.25rem
 
             .number

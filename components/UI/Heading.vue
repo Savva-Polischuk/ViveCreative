@@ -27,7 +27,7 @@ const props = defineProps<Heading>()
 
 <style lang='sass' scoped>
 h1
-        font-size: 2.4rem
+        font-size: 6rem
 
 h2
         font-size: 2.5rem
@@ -48,9 +48,5 @@ h1, h2, h3, h4, h5
         background-image: linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
         white-space: nowrap
         width: min-content
-
-    &.dynamic
-        color: transparent
-        pointer-events: none
 
 </style>

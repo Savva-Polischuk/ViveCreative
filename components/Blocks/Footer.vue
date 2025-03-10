@@ -60,13 +60,12 @@ footer.Footer
         +flex($direction: column, $align-items: center, $gap: 1.75)
     
         .info-and-logo
-            +flex($align-items: start, $gap: 10)
+            +flex($align-items: center, $gap: 10)
             width: 47.1rem
 
             .logo
                 width: 8.58rem
                 height: 3.5rem
-                margin-top: .7rem
             
             .info
                 +flex($gap: 4.75, $align-items: center)

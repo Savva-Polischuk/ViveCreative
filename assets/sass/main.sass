@@ -14,18 +14,19 @@ body
     height: 7736px
     background: rgb(7,7,7)
     background: linear-gradient(rgba(7,7,7,1) 0%, rgba(50,50,50,1) 50%, rgba(30,30,30,1) 100%)
+    overflow-x: hidden
 
 ::-webkit-scrollbar
     width: 10px
 
-
 ::-webkit-scrollbar-thumb
-    background-color: #272727
+    background: #272727
     border-radius: 10px
+    +transition(background, .5)
 
 ::-webkit-scrollbar-thumb:hover
     background: linear-gradient(to right, rgba(52, 52, 52), rgba(86, 86, 86), rgba(52, 52, 52))
-    transition: 0.5s
+    
 
 ::-webkit-scrollbar-track
     background: linear-gradient(to bottom, rgba(17, 17, 17), rgba(23, 23, 23), rgba(17, 17, 17))

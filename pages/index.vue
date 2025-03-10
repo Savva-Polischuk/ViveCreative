@@ -2,7 +2,7 @@
 Header
 
 Block.main(isMain)
-    .main-content(@mousemove="moveSpotlight")
+    .main-content(@mouseenter="showSpotligh", @mousemove="moveSpotlight", @mouseleave="hideSpotligh" :style="{'background-image': spotlightPos}")
         Heading.dynamic(hSize="h2") Создаем, настраиваем, продвигаем
         Heading.dynamic(hSize="h1") Вы — наслаждаетесь результатом
 
@@ -71,13 +71,29 @@ Footer
 </template>
 
 <script lang='ts' setup>
-const spotX: Ref<string | number> = ref(0)
-const spotY: Ref<string | number> = ref(0)
+const spotX = ref<string | number>(0)
+const spotY = ref<string | number>(0)
+const innerCircleSize = ref<string | number>(0)
+const outerCircleSize = ref<string | number>(0)
 
-function moveSpotlight(event: MouseEvent) {
-    spotX.value = event.offsetX + "px"
-    spotY.value = event.offsetY + "px"
+const showSpotligh = () => {
+    innerCircleSize.value = 100 + 'px'
+    outerCircleSize.value = 200 + 'px'
 }
+
+const moveSpotlight = (event: MouseEvent) => {
+    spotX.value = event.offsetX + 'px'
+    spotY.value = event.offsetY + 'px'
+}
+
+const hideSpotligh = () => {
+    innerCircleSize.value = 0 + 'px'
+    outerCircleSize.value = 0 + 'px'
+}
+
+const spotlightPos = computed(() => {
+    return 'radial-gradient(circle at ' + spotX.value  + ' ' + spotY.value + ', rgba(255, 255, 255, 1) ' + innerCircleSize.value + ', rgba(255, 255, 255, .5) ' + outerCircleSize.value + ')'
+})
 
 const characteristicsTop = [
     {char: 'Качество', addition: 'Совершенство во всем'},
@@ -123,8 +139,9 @@ const contacts = [
 
     .main-content
         +flex(column, $align-items: center, $gap: 14.7)
+        padding: 4rem
         margin-bottom: 4rem
-        background-image: radial-gradient(circle at v-bind(spotX) v-bind(spotY), rgba(255, 255, 255, 1) 50px, rgba(255, 255, 255, .5) 100px)
+        background-image: radial-gradient(circle at 0 0, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, .5) 0)
         background-clip: text
 
 ///////

@@ -35,13 +35,13 @@ footer.Footer
         .messenger
             .left-line
                 Line.gr-to-light
-            NuxtLink.messenger-icon(to='https://t.me/vivecreative')
+            NuxtLink.messenger-icon(to='https://t.me/vivecreative' style="width: 1.73rem; height: 1.73rem")
                 IconImg(name="msg:telegram")
-            NuxtLink.messenger-icon(to='https://www.instagram.com/vivecreative')
+            NuxtLink.messenger-icon(to='https://www.instagram.com/vivecreative' style="width: 1.55rem; height: 1.55rem")
                 IconImg(name="msg:instagram")
-            NuxtLink.messenger-icon(to='https://vk.com/vivecreative')
+            NuxtLink.messenger-icon(to='https://vk.com/vivecreative' style="width: 2.1rem; height: 1.25rem")
                 IconImg(name="msg:vk")
-            NuxtLink.messenger-icon(to='https://www.youtube.com/@ViveCreativeWeb')
+            NuxtLink.messenger-icon(to='https://www.youtube.com/@ViveCreativeWeb' style="width: 1.75rem; height: 1.25rem")
                 IconImg(name="msg:youtube")
             .right-line
                 Line.gr-to-dark
@@ -60,11 +60,11 @@ footer.Footer
         +flex($direction: column, $align-items: center, $gap: 1.75)
     
         .info-and-logo
-            +flex($align-items: center, $gap: 10)
-            width: 47.1rem
+            +flex($align-items: center, $gap: 9.1)
+            width: 48.5rem
 
             .logo
-                width: 8.58rem
+                width: 8.6rem
                 height: 3.5rem
             
             .info
@@ -90,15 +90,11 @@ footer.Footer
                             color: rgba(255, 255, 255, .7)
         .messenger
             +flex(row, $gap: 1.6, $align-items: center)
-            width: 100%
-
-            .messenger-icon
-                width: 1.7rem
-                height: 1.7rem        
+            width: 100%      
 
             .left-line
                 width: 100%
     
             .right-line
-                width: 15%
+                width: 19%
 </style>

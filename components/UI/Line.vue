@@ -17,21 +17,21 @@ const props = defineProps<Props>()
     height: 0
 
     &.gr-to-dark
-        border: 1px solid transparent
+        border: .5 solid transparent
         border-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
         -moz-border-image: -moz-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
         -webkit-border-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5))
         border-image-slice: 1
     
     &.gr-to-light
-        border: 1px solid transparent
+        border: .5 solid transparent
         border-image: linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         -moz-border-image: -moz-linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         -webkit-border-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         border-image-slice: 1
 
     &.gr-light-dark-light
-        border: 1px solid transparent
+        border: .5 solid transparent
         border-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         -moz-border-image: -moz-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))
         -webkit-border-image: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, .5), rgba(255, 255, 255, 1))

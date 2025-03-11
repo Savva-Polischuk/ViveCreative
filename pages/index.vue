@@ -37,7 +37,7 @@ Block.our-advantages(titleBlock="В чем наше преимущество")
             Text.number(fontSize="19rem", fontWeight="bold" v-if="index != 0") 0{{index}}
             .adventage-text(v-if="index != 0")
                 Heading(hSize="h3") {{item.advHead}}
-                Text(fontSize="1.6rem", fontWeight="regular" style="opacity: .6; width: 100%") {{item.advDescription}}
+                Text(fontSize="1.6rem" style="width: 100%; color: rgba(128, 128, 128, 1)") {{item.advDescription}}
 
 
 Block.rates(titleBlock="Тарифы")
@@ -116,7 +116,7 @@ const advantages = [
 ]
 
 const rates = [
-        {project: 'Продвижение (SEO, аналитика, аудит)', rate: '5 000 ₽'},
+        {project: 'Сайт на Wordpress', rate: '15 000 ₽'},
         {project: 'Редизайн и адаптивная верстка', rate: '20 000 ₽'},
         {project: 'Лендинг / Корпоративный сайт', rate: '30 000 ₽'},
         {project: 'Интернет-магазин', rate: '120 000 ₽'},
@@ -200,12 +200,13 @@ const contacts = [
         height: 91.75rem
 
         .to-right
-            +flex(row, $align-items: center, $gap: 2.75)
+            +flex(row, $align-items: center, $gap: 1)
             height: 14.25rem
 
             .number
                 font-family: 'JosefinSans'
                 color: rgba(255, 255, 255, .2)
+
 
             .adventage-text
                 +flex(column, $gap: 1, $align-items: start)
@@ -213,7 +214,7 @@ const contacts = [
                 height: 9.3rem
 
         .to-left
-            +flex(row-reverse, $align-items: center, $gap: 2.75)
+            +flex(row-reverse, $align-items: center, $gap: 1)
             height: 14.25rem
 
             .number
@@ -253,7 +254,7 @@ const contacts = [
                 width: 53.3rem
 
                 .cost
-                    +flex($justify-content: start, $gap: .5)
+                    +flex($justify-content: end, $gap: .5)
                     width: 10.9rem
 
 /////// 

@@ -20,6 +20,7 @@ const props = defineProps<Text>()
 <style lang='sass' scoped>
 .Text
     font-weight: 400
+    height: 100%
 
     &.grey
         color: rgba(255, 255, 255, .6)
